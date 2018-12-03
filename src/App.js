@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import Animals from './Components/Animals/Animals.js'
 import Plants from './Components/Plants/Plants.js'
@@ -17,9 +17,20 @@ class App extends Component {
                     <Animals />
                 </div> */}
                 <div>
+                    <ul>
+                        <li>
+                            <Link to='/'>Home</Link>
+                        </li>
+                        <li>
+                            <Link to='/plants'>Plants</Link>
+                        </li>
+                        <li>
+                            <Link to='/animals'>Animals</Link>
+                        </li>
+                    </ul>
                     <Route path='/' exact component={Home} />
                     <Route path='/plants' component={Plants} />
-                    <Route path='/Animals' component={Animals} />
+                    <Route path='/animals' component={Animals} />
                 </div>
             </Router>
         );
